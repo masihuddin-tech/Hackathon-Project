@@ -1,0 +1,333 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* Navbar */  
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(37, 99, 235, 0.9);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* left, center, right */
+  padding: 15px 50px;
+  z-index: 1000;
+}
+
+/* Logo left aligned */
+.navbar .logo {
+  font-size: 2rem;
+  font-weight: 700;
+  flex: 0 0 auto; /* no grow, no shrink */
+}
+
+/* Nav container fills available space */
+.navbar nav {
+  flex: 1 1 auto; /* grow and shrink */
+  display: flex;
+  justify-content: center; /* center nav links */
+  align-items: center;
+  gap: 40px; /* space between current/past */
+  position: relative;
+}
+
+/* Nav links group centered */
+.navbar nav .nav-links {
+  display: flex;
+  gap: 30px;
+  margin-left: -200px; /* shift slightly left */
+}
+
+/* Keep Login/Sign Up on top-right */
+.navbar nav .nav-buttons {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+
+#login-btn:hover {
+  transform: scale(1.1);
+  animation: glowPulse 1.5s infinite alternate;
+}
+.btn-primary:hover {
+  transform: scale(1.1);
+  animation: glowPulseBlue 1.5s infinite alternate;
+}
+
+/* Links styling */
+.navbar nav a {
+  padding: 8px 15px;
+  border: 2px solid white;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Base style */
+.navbar nav a[href="#current"],
+.navbar nav a[href="#past"] {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+
+/* Login Button - Zoom on Hover */
+#login-btn {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  border-radius: 30px;
+  padding: 8px 18px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#login-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9),
+              0 0 20px rgba(37, 99, 235, 0.8),
+              0 0 30px rgba(37, 99, 235, 0.6);
+}
+
+/* Sign Up Button - Glow + Zoom */
+#signup-btn {
+
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  border-radius: 30px;
+  padding: 8px 18px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#signup-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9),
+              0 0 20px rgba(37, 99, 235, 0.6),
+              0 0 30px rgba(37, 99, 235, 0.4);
+}
+
+/* Glow + zoom on hover for Current & Past Hackathons */
+.navbar nav a[href="#current"]:hover,
+.navbar nav a[href="#past"]:hover {
+  transform: scale(1.1);
+  animation: glowPulse 1.5s infinite alternate;
+}
+
+/* Glow animation */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
+                0 0 16px rgba(37, 99, 235, 0.8),
+                0 0 24px rgba(37, 99, 235, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(255, 255, 255, 1),
+                0 0 32px rgba(37, 99, 235, 1),
+                0 0 48px rgba(37, 99, 235, 0.9);
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 20px;
+  }
+  .navbar nav {
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 10px 0;
+    position: static; /* reset absolute */
+  }
+  .navbar nav .nav-buttons {
+    position: static;
+    margin-top: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Hero Section with Parallax */
+.hero {
+  background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?fit=crop&w=1600&q=80') center/cover fixed;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgb(206, 196, 245);
+  position: relative;
+}
+
+.btn-secondary {
+  background: #2563eb; /* rich blue background */
+  border: 2px solid #1e40af; /* slightly darker blue border */
+  padding: 12px 24px;
+  border-radius: 60px;
+  font-weight: 600;
+  color: white;
+  transition: background 0.3s, color 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background: #1e40af; /* darker blue on hover */
+  color: #dbeafe;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+/* Hackathon Cards */
+.hackathons-section {
+  padding: 80px 50px;
+  background: #bad9f7;
+}
+
+.hackathons-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.hackathon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #2563eb;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Modals */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  width: 300px;
+  animation: slideDown 0.4s ease forwards;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.close {
+  float: right;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

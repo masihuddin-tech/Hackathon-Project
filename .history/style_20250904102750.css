@@ -58,17 +58,17 @@ body {
 }
 
 /* Login / Signup right */
-.navbar nav .nav-buttons {
+/* .navbar nav .nav-buttons {
   position: absolute;
   right: -30px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   gap: 10px;
-}
+} */
 
 /* General nav link style */
-.navbar nav a {
+/* .navbar nav a {
   padding: 8px 18px;
   border: 2px solid white;
   border-radius: 30px;
@@ -78,7 +78,7 @@ body {
   transition: all 0.3s ease;
   cursor: pointer;
   white-space: nowrap;
-}
+} */
 
 /* Hover effect */
 .navbar nav a:hover {
@@ -163,7 +163,6 @@ body {
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
-  border-radius: 50px;
 }
 
 .btn-secondary:hover {
@@ -191,40 +190,18 @@ body {
 }
 
 .card {
-  background: rgb(0, 0, 0);
-  border-radius: 8px;
+  background: #f8fafc;
+  border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: transform 0.3s, box-shadow 0.3s;
-  min-height: 250px;  /* 🔥 Add this to increase card length */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* keeps button at bottom */
+  color: #1e293b;
 }
 
 .card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 12px 24px rgba(0,0,0,0.3);
 }
-
-.card a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 16px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);   /* 🔵 rich blue background */
-  color: white;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.card a:hover {
-  /* background: linear-gradient(135deg, #4f46e5, #7c3aed);    */
-  transform: scale(1.03); 
-}
-
-
 
 /* Footer */
 footer {
