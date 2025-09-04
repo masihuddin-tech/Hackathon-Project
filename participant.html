@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participant Dashboard</title>
+  <link rel="stylesheet" href="participant.css">
+</head>
+<body>
+
+  <section class="participant-section">
+    <h1>Upcoming Hackathons</h1>
+
+    <!-- Search and Filters -->
+    <div class="search-filter">
+      <input type="text" id="searchInput" placeholder="Search hackathons...">
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="AI">AI</option>
+        <option value="Web Development">Web Development</option>
+        <option value="App Development">App Development</option>
+      </select>
+      <select id="dateFilter">
+        <option value="">Any Date</option>
+        <option value="upcoming">Upcoming</option>
+        <option value="past">Past</option>
+      </select>
+    </div>
+
+    <!-- Hackathon List -->
+    <div class="hackathon-grid" id="hackathonList">
+      <!-- Dummy data will be loaded here -->
+    </div>
+  </section>
+
+  <script src="participant.js"></script>
+</body>
+</html>

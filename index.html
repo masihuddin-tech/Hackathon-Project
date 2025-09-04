@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hackathon Aggregator Portal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navbar -->
+<header class="navbar">
+  <div class="logo">HackPortal</div>
+  <nav>
+    <div class="nav-links">
+      <a href="#current">Current Hackathons</a>
+      <a href="#past">Featured Hackathons</a>
+    </div>
+    <div class="nav-buttons">
+      <a href="login.html" id="login-btn" class="login-btn">Log In</a>
+      <a href="signup.html" id="signup-btn" class="signup-btn">Sign Up</a>
+    </div>
+  </nav>
+  
+</header>
+
+  <!-- Hero Section with Parallax -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover Your Next Big Coding Challenge</h1>
+      <p>Join exciting hackathons, build innovative projects, and connect with the coding community.</p>
+      <a href="#current" class="btn-secondary">Explore Hackathons</a>
+    </div>
+  </section>
+
+  <!-- Current Hackathons -->
+  <section id="current" class="hackathons-section">
+    <h2>Upcoming Hackathons</h2>
+    <div class="hackathon-grid" id="current-hackathons">
+      <!-- Loaded dynamically from Firestore -->
+    </div>
+  </section>
+
+  <!-- Past Hackathons -->
+  <section id="past" class="hackathons-section">
+    <h2>Featured Hackathons</h2>
+    <div class="hackathon-grid" id="past-hackathons">
+      <!-- Loaded dynamically from Firestore -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Hackathon Aggregator Portal. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal hidden" id="login-modal">
+    <div class="modal-content">
+      <span class="close" id="login-close">&times;</span>
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button id="login-submit">Login</button>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div class="modal hidden" id="signup-modal">
+    <div class="modal-content">
+      <span class="close" id="signup-close">&times;</span>
+      <h2>Sign Up</h2>
+      <input type="email" id="signup-email" placeholder="Email" />
+      <input type="password" id="signup-password" placeholder="Password" />
+      <button id="signup-submit">Sign Up</button>
+    </div>
+  </div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
