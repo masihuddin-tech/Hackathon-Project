@@ -1,0 +1,236 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #111827;  /* 🔥 dark grey, not pure black */
+  color: #f9fafb;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(37, 99, 235, 0.95);  /* strong blue */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);  /* 🔥 adds separation */
+}
+
+/* Logo left aligned */
+.navbar .logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  flex: 0 0 auto;
+}
+
+/* Nav container */
+.navbar nav {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+/* Nav links center */
+.navbar nav .nav-links {
+  display: flex;
+  gap: 30px;
+  margin-left: -200px; /* slight left shift */
+}
+
+/* Login / Signup right */
+.navbar nav .nav-buttons {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+/* General nav link style */
+.navbar nav a {
+  padding: 8px 18px;
+  border: 2px solid white;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Hover effect */
+.navbar nav a:hover {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-color: transparent;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.7);
+}
+
+/* Login button */
+#login-btn, #signup-btn {
+  border: none;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border-radius: 30px;
+  padding: 8px 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#login-btn:hover, #signup-btn:hover {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.8);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 20px;
+  }
+  .navbar nav {
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 10px 0;
+    position: static;
+  }
+  .navbar nav .nav-buttons {
+    position: static;
+    margin-top: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(
+      rgba(17, 17, 17, 0.6),
+      rgba(17, 17, 17, 0.6)
+    ),
+    url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?fit=crop&w=1600&q=80') center/cover fixed;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #e5e7eb;
+}
+
+/* Hero Button */
+.btn-secondary {
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.8);
+}
+
+/* Hackathon Cards */
+.hackathons-section {
+  padding: 80px 50px;
+  background: #1e293b;
+  color: white;
+}
+
+.hackathons-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.hackathon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgb(0, 0, 0);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-height: 250px;  /* 🔥 Add this to increase card length */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* keeps button at bottom */
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);   /* 🔵 rich blue background */
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card a:hover {
+  /* background: linear-gradient(135deg, #4f46e5, #7c3aed);    */
+  transform: scale(1.03); 
+}
+
+
+
+/* Footer */
+footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}

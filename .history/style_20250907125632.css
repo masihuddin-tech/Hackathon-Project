@@ -1,0 +1,240 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a; /* dark base */
+  color: #f1f5f9;
+  line-height: 1.6;
+}
+
+/* Navbar */
+/* Frosted Glass Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  background: rgba(255, 255, 255, 0.25); /* semi-transparent */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  z-index: 1000;
+}
+
+
+
+/* Logo left aligned */
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Nav container */
+.navbar nav {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+/* Nav links center */
+.navbar nav .nav-links {
+  display: flex;
+  gap: 30px;
+  margin-left: -200px; /* slight left shift */
+}
+
+/* Login / Signup right */
+.navbar nav .nav-buttons {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+/* General nav link style */
+.navbar nav a {
+  padding: 8px 16px;
+  border: 2px solid #ffffff;
+  border-radius: 25px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #030303; /* gold highlight on hover */
+  border-color: #0b0b0a;
+  transform: scale(1.05);
+}
+
+/* Login button */
+#login-btn,#signup-btn {
+  border: 2px solid #ffffff;
+  color: white;
+  border-radius: 25px;
+  padding: 8px 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#login-btn:hover,#signup-btn:hover {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: 2px solid #ffffff;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 20px;
+  }
+  .navbar nav {
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 10px 0;
+    position: static;
+  }
+  .navbar nav .nav-buttons {
+    position: static;
+    margin-top: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(
+      rgba(17, 17, 17, 0.6),
+      rgba(17, 17, 17, 0.6)
+    ),
+    url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?fit=crop&w=1600&q=80') center/cover fixed;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #e5e7eb;
+}
+
+/* Hero Button */
+.btn-secondary {
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.8);
+}
+
+/* Hackathon Cards */
+.hackathons-section {
+  padding: 80px 50px;
+  background: #1e293b;
+  color: white;
+}
+
+.hackathons-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.hackathon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgb(255 255 255 , 0, 0);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-height: 250px;  /* 🔥 Add this to increase card length */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* keeps button at bottom */
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);   /* 🔵 rich blue background */
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card a:hover {
+  /* background: linear-gradient(135deg, #4f46e5, #7c3aed);    */
+  transform: scale(1.03); 
+}
+
+
+
+/* Footer */
+footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}

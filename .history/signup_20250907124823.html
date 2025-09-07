@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Hackathon Aggregator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+  <div class="signup-box">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+
+      <label for="role">Role</label>
+      <select id="role" required>
+        <option value="">Select role \/</option>
+        <option value="participant">Participant</option>
+        <option value="organizer">Organizer</option>
+      </select>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      alert("Sign Up Successful! (Firebase integration coming soon)");
+    });
+  </script>
+
+</body>
+</html>

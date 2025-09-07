@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Hackathon Aggregator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>Log In</h2>
+    <form id="loginForm">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+
+      <button type="submit">Log In</button>
+
+    </form>
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      alert("Login Successful! (Firebase integration coming soon)");
+      window.location.href = "participant.html"; // redirect to participant page
+    });
+
+    //document.getElementById("loginForm").addEventListener("click", function (e) {
+      //e.preventDefault(); // prevent form submission
+    //});
+
+  </script>
+
+
+</body>
+</html>
