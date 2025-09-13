@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-266px * 7))
+            }
+        }
+        .animate-scroll {
+            animation: scroll 40s linear infinite;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.25s ease-out;
+        }
+        .nav-link:hover {
+            color: #00C9A7;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #00C9A7;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-up {
+            animation: fade-up 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .carousel-container {
+            -ms-overflow-style: none;scrollbar-width: none;}
+        .carousel-container::-webkit-scrollbar {
+            display: none;}
+    </style>
+</head>
+<body class="bg-[#111817]">
+<div class="relative flex size-full min-h-screen flex-col dark group/design-root overflow-x-hidden" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#283937] bg-[#111817]/80 px-10 py-3 backdrop-blur-sm">
+<div class="flex items-center gap-4 text-white">
+<svg class="h-6 w-6 text-[#00C9A7]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">InnovateHub</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="nav-link text-white/80 text-sm font-medium leading-normal" href="#">Home</a>
+<a class="nav-link text-white/80 text-sm font-medium leading-normal" href="./Explore.html">Explore Hackathons</a>
+<a class="nav-link text-white/80 text-sm font-medium leading-normal" href="#">Organize</a>
+<a class="nav-link text-white/80 text-sm font-medium leading-normal" href="#">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-[#00C9A7] text-[#111817] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#00a68c] transition-colors">
+<span class="truncate">Login/Signup</span>
+</button>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined"> menu </span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<section class="relative flex min-h-[60vh] sm:min-h-0 sm:h-[calc(100vh-81px)] md:min-h-[75vh] flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-4" style='background-image: linear-gradient(rgba(17, 24, 23, 0.8) 0%, rgba(17, 24, 23, 1) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMlFrVNO_4pX1oAyowiSMT9ME8xQpaQhh3E17wyqW9GCRb85y0Ujuv4rgUPOauxLgKh4_rfc8jWhYiMrORzQCzBVgOT-M3uIg-h5oR5NWtL4ENRP4k9nQHAsed0tGolCMNTV3xfPwC3U2-ZvjzgoNgJtAp3efEuSgC0zZAUqRR8RHTzHyABsIwcIeUy0EB01bGWuStf8ArNTEzmAFoKCMF4mcMeE8HhCzxfTC5ZXolYV_PK9vzEHXK3g-eMBCq5uCgzLvK4JTYzmw");'>
+<div class="flex flex-col gap-6 text-center max-w-4xl mx-auto">
+<h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tighter">Build. Compete. Innovate.</h1>
+<p class="text-white/90 text-base md:text-lg font-normal leading-normal">Join upcoming hackathons across engineering colleges.</p>
+<div class="flex flex-wrap gap-4 justify-center mt-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-[#00C9A7] text-[#111817] text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#00a68c] transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-[#00C9A7]/30">
+<span class="truncate">Explore Hackathons</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-[#FF6B35] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#e65a2e] transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B35]/30">
+<span class="truncate">Organize Hackathon</span>
+</button>
+</div>
+</div>
+</section>
+<section class="relative py-20 px-4 md:px-10 overflow-hidden">
+<div class="absolute top-1/2 -translate-y-1/2 left-0 -translate-x-1/2 w-96 h-96 bg-[#00c9a7]/20 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+<div class="absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/2 w-96 h-96 bg-[#ff6b35]/20 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+<div class="absolute top-0 left-0 w-32 h-64 bg-no-repeat bg-center opacity-20 pointer-events-none" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjL8AZtdefXl2OpD9NfX-oiGHlufD4umPK99YI_JSmAbckjjAotHq6xPcMPK0dBtnTaYjp6D2JpiPtOJscbArbJLDcl-st3cLBnefHwSreR5USRtr-kQCEz9IXky4UXLq44UOUT1fjDTXwn_bAVcVpYh0ZA88oP5FIWfc9L8a5oofgJ01LXMtUsxQSv1hOO8TdbS_YrH6KGJmhAtmOSKsHCi2I1wVaTsfWTqqLk7mpD7fP5rOPbJ7zzpRYvgpykYKzseLVrJRSwfQ");'></div>
+<div class="absolute bottom-0 right-0 w-32 h-64 bg-no-repeat bg-center opacity-20 pointer-events-none" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjL8AZtdefXl2OpD9NfX-oiGHlufD4umPK99YI_JSmAbckjjAotHq6xPcMPK0dBtnTaYjp6D2JpiPtOJscbArbJLDcl-st3cLBnefHwSreR5USRtr-kQCEz9IXky4UXLq44UOUT1fjDTXwn_bAVcVpYh0ZA88oP5FIWfc9L8a5oofgJ01LXMtUsxQSv1hOO8TdbS_YrH6KGJmhAtmOSKsHCi2I1wVaTsfWTqqLk7mpD7fP5rOPbJ7zzpRYvgpykYKzseLVrJRSwfQ");'></div>
+<div class="flex items-center justify-center gap-3 text-center mb-12">
+<h2 class="text-white text-4xl font-extrabold leading-tight tracking-tight">Featured Hackathons</h2>
+<span class="material-symbols-outlined text-4xl text-[#FF6B35] animate-pulse">local_fire_department</span>
+</div>
+<div class="relative max-w-7xl mx-auto">
+<div class="absolute inset-y-0 left-0 z-10 flex items-center">
+<button class="bg-white/10 text-white p-2 rounded-full hover:bg-white/20 transition-colors -ml-6" onclick="document.getElementById('hackathon-carousel').scrollBy({ left: -300, behavior: 'smooth' })">
+<span class="material-symbols-outlined"> chevron_left </span>
+</button>
+</div>
+<div class="flex overflow-x-auto carousel-container scroll-smooth snap-x snap-mandatory py-4 -mx-4 px-4" id="hackathon-carousel">
+<div class="flex space-x-8 snap-start">
+<div class="flex flex-col bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden animate-fade-up stagger-1 w-80 flex-shrink-0 snap-center">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Tech Innovators Challenge Banner" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXSV6T3mlIIhDQdhb9wm_rBrS5LB62Dn28lVfjAvQfX-3MjUILLy7ldM-li6ZKG6gYyULIUu_r-luidoKojKU6w_GRhzDLy1gN1NbRXiRoyiw60Oj2OzEczCiUCQ5Ooo2fOVHbYgE9qO-km1npyUgtym6RAmsBCeeKvqsIFwtC_5aLxVQY9IR0G6E58OaqNuytu84P0DRFlGhypGeALKygjWObyMFfr-J5xda43VNDbxSNlIMoINkakQA0K6teHxIlChl0P6eLzW4"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-gray-900 text-lg font-bold leading-tight">Tech Innovators Challenge</h3>
+<p class="text-gray-500 text-sm font-medium mt-1">Oct 25-27, 2024 • Tech University</p>
+<div class="mt-auto pt-4 text-right">
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors" href="#"> Register → </a>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden animate-fade-up stagger-2 w-80 flex-shrink-0 snap-center">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Code Masters Showdown Banner" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArBBZveY9za9c8V4LAqL2e2gULop0a_y2F8ko6gWmjbDd2tgTYfQKw7xc4btwSW-c651taZV8fni1-vKxau2lF2xbxaFaD9QUGJrttKs47Lpj-LCIptKXUlYdfVcDuPnVMKXcQ_3qZNEJ4MD1NPTSEjDdfHltDAaTRkop3SWq-oQioWz4rrcC69Ke5uOh5QGQX-Ms4uQTm-IfN8q21benH-Y-1y3M_ioi2nqHz-QVelVQAHZyj2jFtCbLEHmaurJf3r19Jx54aCrI"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-gray-900 text-lg font-bold leading-tight">Code Masters Showdown</h3>
+<p class="text-gray-500 text-sm font-medium mt-1">Nov 1-3, 2024 • Innovation College</p>
+<div class="mt-auto pt-4 text-right">
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors" href="#"> Register → </a>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden animate-fade-up stagger-3 w-80 flex-shrink-0 snap-center">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Future Builders Hack Banner" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0orKKAYMPdZ1Jlzms0yF9i97UeZu9kailLiwifhwZAUw9C5twdlZXYEc7XXn6eRrh1QSisVQujXNBBsGU8_GH7sk2ROqBQNbAC4tyRpUmmIl3H0o9q90QY3CsZKdqZDLrku7R4w35cc7fEbO_kGfaupD5rHedjz3xW7kiPDGhKOaZ42I2UsX6hIrWX4hc353Ir8EsVXtmrma6w2FlkBJr9pBftJqPqxmFGLrKAidTPPlfihyHipHjaQHq7Od97oSvVNEg8RtlRMo"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-gray-900 text-lg font-bold leading-tight">Future Builders Hack</h3>
+<p class="text-gray-500 text-sm font-medium mt-1">Nov 15-17, 2024 • Engineering Institute</p>
+<div class="mt-auto pt-4 text-right">
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors" href="#"> Register → </a>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden animate-fade-up stagger-4 w-80 flex-shrink-0 snap-center">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="AI for Good Challenge Banner" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcBx_QV9ZqkHkJ2SvEQ_9HW4ghZWufM-JQydzavRg8wcoTv37jHXl60y35kACefnQyCopC6_OdUVDlv9ib2ew0XpWlhNCESS9S3BXNZBoBeKjFgFXLLHS14SXRFfWxn5UXmfofkF62a93GLo0DkQE2cFdTGrsfJJnjuE23EktgKQhaqCIUP8J8xRomNuOYWyDZqIP7hAboBzi__5X53vGnrWfK6kXdYQreMyiMP-os2J4neoYyBXB2-1wdw9b0YDCbFnssfkzrTEk"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-gray-900 text-lg font-bold leading-tight">AI for Good Challenge</h3>
+<p class="text-gray-500 text-sm font-medium mt-1">Dec 1-3, 2024 • Global Tech Hub</p>
+<div class="mt-auto pt-4 text-right">
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors" href="#"> Register → </a>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden w-80 flex-shrink-0 snap-center">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Cyber Security Hackathon Banner" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuH9VwrnkEpPYOTAalrKkDuIorZOKmc3z5ADj-HPsha00VyeG9tR3lRMUUwxTDw5Fld7nxyKQkGMB-zPWN2FA0zv4nXY-Y6-ahPmII0nDQZsEquGggxm7m3ySsa3Uj9naEiEm8QapXixjB_tWtXQbQGEHqmYp5v2PrVcxOuIPETCprUkum9n-pia0n8W5Dbj_e7KQNt3oYDmBLckbDwOTX8w0KXDhvSN5y7DEMD1Mrz1dg37n-lgtuBdPJmx3ezdUgiCBgGL9oSbM"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-gray-900 text-lg font-bold leading-tight">Cyber Security Hack</h3>
+<p class="text-gray-500 text-sm font-medium mt-1">Dec 10-12, 2024 • Cyber Institute</p>
+<div class="mt-auto pt-4 text-right">
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors" href="#"> Register → </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute inset-y-0 right-0 z-10 flex items-center">
+<button class="bg-white/10 text-white p-2 rounded-full hover:bg-white/20 transition-colors -mr-6" onclick="document.getElementById('hackathon-carousel').scrollBy({ left: 300, behavior: 'smooth' })">
+<span class="material-symbols-outlined"> chevron_right </span>
+</button>
+</div>
+</div>
+<div class="mt-12 text-center">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-transparent border border-[#00C9A7] text-[#00C9A7] text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#00C9A7]/10 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-[#00C9A7]/20 mx-auto gap-2">
+<span class="truncate">Explore More</span>
+<span class="material-symbols-outlined"> arrow_forward </span>
+</button>
+</div>
+</section>
+<section class="bg-[#141d1c] py-20 px-10">
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="text-white text-4xl font-extrabold leading-tight tracking-tight">Why Join a Hackathon?</h2>
+<p class="text-white/80 text-lg mt-4">Participate in hackathons and experience the thrill of competition, collaboration, and innovation.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-6xl mx-auto">
+<div class="flex flex-col items-center text-center gap-4 rounded-xl border border-[#3b5452] bg-[#1b2726] p-8 hover:bg-[#1f2e2d] hover:border-[#00C9A7]/50 transition-all duration-300">
+<div class="bg-[#FF6B35]/10 p-4 rounded-full">
+<span class="material-symbols-outlined text-[#FF6B35] text-4xl">emoji_events</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight mt-2">Compete</h3>
+<p class="text-[#9cbab7] text-base font-normal leading-relaxed">Challenge yourself and showcase your skills against other talented individuals.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4 rounded-xl border border-[#3b5452] bg-[#1b2726] p-8 hover:bg-[#1f2e2d] hover:border-[#00C9A7]/50 transition-all duration-300">
+<div class="bg-[#00C9A7]/10 p-4 rounded-full">
+<span class="material-symbols-outlined text-[#00C9A7] text-4xl">groups</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight mt-2">Collaborate</h3>
+<p class="text-[#9cbab7] text-base font-normal leading-relaxed">Work with like-minded individuals, learn from each other, and build amazing projects together.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4 rounded-xl border border-[#3b5452] bg-[#1b2726] p-8 hover:bg-[#1f2e2d] hover:border-[#00C9A7]/50 transition-all duration-300">
+<div class="bg-[#facc15]/10 p-4 rounded-full">
+<span class="material-symbols-outlined text-[#facc15] text-4xl">redeem</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight mt-2">Win</h3>
+<p class="text-[#9cbab7] text-base font-normal leading-relaxed">Win exciting prizes, gain recognition, and boost your career prospects.</p>
+</div>
+</div>
+</section>
+<section class="py-20 px-10">
+<h2 class="text-white text-4xl font-extrabold leading-tight tracking-tight text-center mb-16">Community Highlights</h2>
+<div class="relative w-full max-w-none mx-auto overflow-hidden group">
+<div class="flex animate-scroll group-hover:[animation-play-state:paused] w-max">
+<div class="flex">
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_OO5uxbOjVUJ2JL5X5-3f1BRtFF5ChydARMExMiOFUi_7-qrhptHSCUlIityies0ztJyS9WmtZgLOmzaXgQjdoW8yjDac72uLngmDaYThgzLUynu2s-tR2nqrD0F7eY8p9gVcDJEydwnBO1SOeVj-jzo_JbM3pL5z_AVDZrnS3irpEx1MJR7zD7L27NS3DuRG6WORUVgBcap8sV-6Be90HfkCWiwqhHOpQgilVcNiASAStPgzhAkd-U8w0embLv-s0J84chnjNFE");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">photo_camera</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Winning Moment</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAI4bUgHvYnChD8kAlJIQ6k2mBT9eYqNwvkiM_dPMlZrs_R3i4qjVEqSJv3RaedU-YIQh-uEFCmFrHqmEvSl2MGzFmxPP0JwLI99ZWV8srVKWhjToyE96WXSdt6XPu-DtGAAuCJMFxPU-b7GuiU75gRtfWYaZT_XSgXhEJVofdDW_cGLBy2yYFv34lVls3AZIIirsA5ljcw2Zqku0dHw1zQEo7cBeAljoOCpc3GnrIgMexC-pHwSiEGfzwRIQ8vvZDDiTgtRnbmWUU");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">search</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Team Collaboration</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClOUbGzRoLbeBnXI3GZAH380EMZgaol6kL3jAWb5BQCDRvpnk4hD-s58d8nOwzcJzdvsol0-qKcFeok4eOqQiKGN3Qxfw16hGaXHuD1JdcA3_Rhcs_247Dxrp9hWNiRlCFzHKShSGaA0G114JWtJR02gVF1D18HDZVUTv0zURqb7O2LqUhDN7_JUQZsyXy22py_i7g6cx9Gs0iG0TKcJ_rpjwfGl6LwBBij9UMe3Z96XdUY1NRvsGD1NZxy4oycPg6f5NZbI-m6OM");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">photo_camera</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Late Night Coding</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDL634xoguuYwjKE7XKOL0g5GO1_rRSVCmD-u_vD7YNxCQGLOm5zPo0C8VH3_DsQsdUn4dlOn0KElGPQMr5GPbUNlGi2caijMTHObuG-wsBmpUTI6GJHysZqPxg7gvIxMb6Uiw6L8WQo3yu-4_fHovyu_stjp-uB37TX4lnlTbE1RlIee1vLG9u4wK6wy7WH7RNrVnz4Bu36_C3J6leUUx7vRWnUXHlgk3NVlLyaTboNa14jV8UsBFMnqs0SjuJOp1WTztwgItvlls");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">search</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Judging Panel</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDj9fdaX_1wR8uP62JSYmEpWK_o2lkyc3QvtsXvM5JHaBJsy64aGxv1m9GQRsdYXwa2iRVLbsZJ2gLPQcYvCyQ45Rc59qm_yKRMI6opw75dSRmvmq5xMv7ZPRWAySkUnqrxE1SJr_Wael803UnkHwj_WU17mz1-0HYSH3aFICfjhi9v4qQBU4mUAiGmms1SNhCDQ_dvvNQcn2XwEdCL7q0S8CGqdBv0CEbver8Lke3TBzYy5Xbf4kxct_fe4wE6oYS0g-8SbChFgjk");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">photo_camera</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Project Showcase</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgifAWBFh8JoJou6QZgtVPAFiOTTwQ8udkrC6TeQPAnamfvy7xLrsUuYQ2Pe-Ez5cY9nVOL0ENs3ajQKfhPXyEdmE-MuckzpilW-iTFwYdT79Y_UV3rqc-WH_cpfRXmAjLOsRw9ldp_g2O8hgtRZMdoBB6KXSi7xfTim3jUo9jqgRJJH6zk-wCJ1xu5oW6s5FqMS50XpGMahuS2gUYbXC_kHpv5duuqbnrEELhicZ-hDJWHDfVcj0X_NodKeBVLmC_q9Q14hQEV7k");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">search</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Networking Event</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_OO5uxbOjVUJ2JL5X5-3f1BRtFF5ChydARMExMiOFUi_7-qrhptHSCUlIityies0ztJyS9WmtZgLOmzaXgQjdoW8yjDac72uLngmDaYThgzLUynu2s-tR2nqrD0F7eY8p9gVcDJEydwnBO1SOeVj-jzo_JbM3pL5z_AVDZrnS3irpEx1MJR7zD7L27NS3DuRG6WORUVgBcap8sV-6Be90HfkCWiwqhHOpQgilVcNiASAStPgzhAkd-U8w0embLv-s0J84chnjNFE");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">photo_camera</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Winning Moment</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+</div>
+<div aria-hidden="true" class="flex">
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_OO5uxbOjVUJ2JL5X5-3f1BRtFF5ChydARMExMiOFUi_7-qrhptHSCUlIityies0ztJyS9WmtZgLOmzaXgQjdoW8yjDac72uLngmDaYThgzLUynu2s-tR2nqrD0F7eY8p9gVcDJEydwnBO1SOeVj-jzo_JbM3pL5z_AVDZrnS3irpEx1MJR7zD7L27NS3DuRG6WORUVgBcap8sV-6Be90HfkCWiwqhHOpQgilVcNiASAStPgzhAkd-U8w0embLv-s0J84chnjNFE");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">photo_camera</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Winning Moment</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAI4bUgHvYnChD8kAlJIQ6k2mBT9eYqNwvkiM_dPMlZrs_R3i4qjVEqSJv3RaedU-YIQh-uEFCmFrHqmEvSl2MGzFmxPP0JwLI99ZWV8srVKWhjToyE96WXSdt6XPu-DtGAAuCJMFxPU-b7GuiU75gRtfWYaZT_XSgXhEJVofdDW_cGLBy2yYFv34lVls3AZIIirsA5ljcw2Zqku0dHw1zQEo7cBeAljoOCpc3GnrIgMexC-pHwSiEGfzwRIQ8vvZDDiTgtRnbmWUU");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">search</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Team Collaboration</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClOUbGzRoLbeBnXI3GZAH380EMZgaol6kL3jAWb5BQCDRvpnk4hD-s58d8nOwzcJzdvsol0-qKcFeok4eOqQiKGN3Qxfw16hGaXHuD1JdcA3_Rhcs_247Dxrp9hWNiRlCFzHKShSGaA0G114JWtJR02gVF1D18HDZVUTv0zURqb7O2LqUhDN7_JUQZsyXy22py_i7g6cx9Gs0iG0TKcJ_rpjwfGl6LwBBij9UMe3Z96XdUY1NRvsGD1NZxy4oycPg6f5NZbI-m6OM");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">photo_camera</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Late Night Coding</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDL634xoguuYwjKE7XKOL0g5GO1_rRSVCmD-u_vD7YNxCQGLOm5zPo0C8VH3_DsQsdUn4dlOn0KElGPQMr5GPbUNlGi2caijMTHObuG-wsBmpUTI6GJHysZqPxg7gvIxMb6Uiw6L8WQo3yu-4_fHovyu_stjp-uB37TX4lnlTbE1RlIee1vLG9u4wK6wy7WH7RNrVnz4Bu36_C3J6leUUx7vRWnUXHlgk3NVlLyaTboNa14jV8UsBFMnqs0SjuJOp1WTztwgItvlls");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">search</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Judging Panel</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDj9fdaX_1wR8uP62JSYmEpWK_o2lkyc3QvtsXvM5JHaBJsy64aGxv1m9GQRsdYXwa2iRVLbsZJ2gLPQcYvCyQ45Rc59qm_yKRMI6opw75dSRmvmq5xMv7ZPRWAySkUnqrxE1SJr_Wael803UnkHwj_WU17mz1-0HYSH3aFICfjhi9v4qQBU4mUAiGmms1SNhCDQ_dvvNQcn2XwEdCL7q0S8CGqdBv0CEbver8Lke3TBzYy5Xbf4kxct_fe4wE6oYS0g-8SbChFgjk");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">photo_camera</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Project Showcase</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgifAWBFh8JoJou6QZgtVPAFiOTTwQ8udkrC6TeQPAnamfvy7xLrsUuYQ2Pe-Ez5cY9nVOL0ENs3ajQKfhPXyEdmE-MuckzpilW-iTFwYdT79Y_UV3rqc-WH_cpfRXmAjLOsRw9ldp_g2O8hgtRZMdoBB6KXSi7xfTim3jUo9jqgRJJH6zk-wCJ1xu5oW6s5FqMS50XpGMahuS2gUYbXC_kHpv5duuqbnrEELhicZ-hDJWHDfVcj0X_NodKeBVLmC_q9Q14hQEV7k");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">search</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Networking Event</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+<a class="relative w-[280px] h-[280px] flex-shrink-0 mx-4 group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-[#00c9a7]/20 transition-all duration-200 ease-in-out" href="#lightbox">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-lg transition-transform duration-200 ease-in-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_OO5uxbOjVUJ2JL5X5-3f1BRtFF5ChydARMExMiOFUi_7-qrhptHSCUlIityies0ztJyS9WmtZgLOmzaXgQjdoW8yjDac72uLngmDaYThgzLUynu2s-tR2nqrD0F7eY8p9gVcDJEydwnBO1SOeVj-jzo_JbM3pL5z_AVDZrnS3irpEx1MJR7zD7L27NS3DuRG6WORUVgBcap8sV-6Be90HfkCWiwqhHOpQgilVcNiASAStPgzhAkd-U8w0embLv-s0J84chnjNFE");'></div>
+<div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out p-4">
+<span class="material-symbols-outlined text-white text-5xl">photo_camera</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-lg flex items-end p-4">
+<p class="text-white font-semibold transform-none group-hover:-translate-y-2 transition-transform duration-200">Winning Moment</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/50 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity">
+<span class="material-symbols-outlined !text-sm">photo_library</span>
+</div>
+</a>
+</div>
+</div>
+<div class="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#111817] via-transparent to-[#111817]"></div>
+</div>
+</section>
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none target:opacity-100 target:pointer-events-auto transition-opacity duration-200" id="lightbox">
+<div class="relative w-full max-w-4xl p-4">
+<a class="absolute -top-10 right-4 text-white text-4xl" href="#">×</a>
+<img alt="Winning Moment" class="w-full h-auto max-h-[80vh] object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_OO5uxbOjVUJ2JL5X5-3f1BRtFF5ChydARMExMiOFUi_7-qrhptHSCUlIityies0ztJyS9WmtZgLOmzaXgQjdoW8yjDac72uLngmDaYThgzLUynu2s-tR2nqrD0F7eY8p9gVcDJEydwnBO1SOeVj-jzo_JbM3pL5z_AVDZrnS3irpEx1MJR7zD7L27NS3DuRG6WORUVgBcap8sV-6Be90HfkCWiwqhHOpQgilVcNiASAStPgzhAkd-U8w0embLv-s0J84chnjNFE"/>
+<p class="text-white text-center mt-2 text-lg font-semibold">Winning Moment</p>
+<button class="absolute top-1/2 -translate-y-1/2 left-4 bg-white/20 text-white p-2 rounded-full hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="absolute top-1/2 -translate-y-1/2 right-4 bg-white/20 text-white p-2 rounded-full hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<section class="py-20 px-10 text-center bg-[#141d1c]">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-white text-4xl font-extrabold leading-tight tracking-tight">Ready to Innovate?</h2>
+<p class="text-white/80 text-lg mt-4 max-w-2xl mx-auto">Join our community of builders and innovators today and start your journey.</p>
+<div class="mt-8">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-[#00C9A7] text-[#111817] text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#00a68c] transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-[#00C9A7]/30 mx-auto">
+<span class="truncate">Get Started Now</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#0f1413] py-12 px-10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
+<div class="flex flex-col gap-4 items-center md:items-start">
+<div class="flex items-center gap-3">
+<svg class="h-7 w-7 text-[#00C9A7]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-white text-xl font-bold">InnovateHub</h2>
+</div>
+<p class="text-white/80 text-base max-w-xs">© 2024 InnovateHub. Ignite your passion for creation.</p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+<a class="text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">About</a>
+<a class="text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">Contact</a>
+<a class="text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">FAQs</a>
+</div>
+<div class="flex justify-center gap-5">
+<a class="text-[#9cbab7] hover:text-white transition-colors" href="#">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
+</svg>
+</a>
+<a class="text-[#9cbab7] hover:text-white transition-colors" href="#">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+</svg>
+</a>
+<a class="text-[#9cbab7] hover:text-white transition-colors" href="#">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+</svg>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

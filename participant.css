@@ -1,75 +1,54 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #f9fafb;
+* {
   margin: 0;
   padding: 0;
-  color: #1f2937;
+  box-sizing: border-box;
 }
 
-.participant-section {
-  padding: 50px;
-  max-width: 1100px;
-  margin: auto;
+html {
+  scroll-behavior: smooth;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #2563eb;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a; /* dark base */
+  color: #f1f5f9;
+  line-height: 1.6;
 }
 
-.search-filter {
+
+/* Navbar */
+/* Frosted Glass Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  background: rgba(255, 255, 255, 0.25); /* semi-transparent */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
-  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  z-index: 1000;
+}
+
+/* Logo left aligned */
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Nav container */
+.navbar nav {
+  flex: 1 1 auto;
+  display: flex;
   justify-content: center;
-  margin-bottom: 30px;
-}
-
-.search-filter input, .search-filter select {
-  padding: 10px;
-  border: 2px solid #2563eb;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.hackathon-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.card h3 {
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-}
-
-.card button {
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.card button:hover {
-  background: #1e40af;
+  align-items: center;
+  gap: 40px;
+  position: relative;
 }
