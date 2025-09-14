@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>InnovateHub - Explore Hackathons</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+    .nav-link {
+        position: relative;
+        transition: color 0.25s ease-out;
+    }
+    .nav-link:hover {
+        color: #00C9A7;
+    }
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #00C9A7;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+    .nav-link:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+</style>
+</head>
+<body class="bg-white dark:bg-[#111817]">
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col">
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-b-[#283937] bg-white/80 dark:bg-[#111817]/80 px-10 py-3 backdrop-blur-sm">
+<div class="flex items-center gap-4 text-gray-900 dark:text-white">
+<svg class="h-6 w-6 text-[#00C9A7]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-gray-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">InnovateHub</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="nav-link text-gray-600 dark:text-white/80 text-sm font-medium leading-normal" href="./index.html">Home</a>
+<a class="nav-link text-[#00C9A7] text-sm font-bold leading-normal" href="./explorefinal.html">Explore Hackathons</a>
+<a class="nav-link text-gray-600 dark:text-white/80 text-sm font-medium leading-normal" href="./organise.html">Organize</a>
+<a class="nav-link text-gray-600 dark:text-white/80 text-sm font-medium leading-normal" href="./about.html">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-transparent border border-gray-500/50 text-gray-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<span class="truncate">Login</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-[#00C9A7] text-white dark:text-[#111817] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#00a68c] transition-colors">
+<span class="truncate">Signup</span>
+</button>
+<button class="md:hidden text-gray-900 dark:text-white">
+<span class="material-symbols-outlined"> menu </span>
+</button>
+</div>
+</header>
+<main class="flex-1 pt-20"> <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[#141d1c]">
+<div class="max-w-7xl mx-auto">
+<div class="text-center">
+<h1 class="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">Explore Hackathons</h1>
+<p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-400 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">Find your next challenge and connect with fellow innovators.</p>
+</div>
+<div class="mt-12 flex flex-col md:flex-row gap-6 justify-center items-center">
+<div class="relative w-full md:w-1/2 lg:w-1/3">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"> search </span>
+<input id="search-bar" class="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#00C9A7]" placeholder="Search by hackathon name..." type="text"/>
+</div>
+<div class="flex gap-4">
+<button id="filter-btn" class="flex items-center gap-2 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined"> filter_list </span>
+Filter
+</button>
+<button class="flex items-center gap-2 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined"> sort </span>
+Sort
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#111817]">
+<div class="max-w-7xl mx-auto">
+<div id="hackathon-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Tech Innovators Challenge" class="w-full h-full object-cover" src="https://picsum.photos/seed/tech/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">Online</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">Tech Innovators Challenge</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">Oct 25-27, 2025 • Tech University</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">AI/ML</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">124 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Code Masters Showdown" class="w-full h-full object-cover" src="https://picsum.photos/seed/code/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">In-Person</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">Code Masters Showdown</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">Nov 1-3, 2025 • Innovation College</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">Blockchain</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">98 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Future Builders Hack" class="w-full h-full object-cover" src="https://picsum.photos/seed/future/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">Online</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">Future Builders Hack</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">Nov 15-17, 2025 • Engineering Institute</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">IoT</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">210 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="AI for Good Challenge" class="w-full h-full object-cover" src="https://picsum.photos/seed/ai/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">Online</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">AI for Good Challenge</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">Dec 1-3, 2025 • Global Tech Hub</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">AI</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">350 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Cyber Security Hack" class="w-full h-full object-cover" src="https://picsum.photos/seed/cyber/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">In-Person</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">Cyber Security Hack</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">Dec 10-12, 2025 • Cyber Institute</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">Cybersecurity</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">150 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Data Science Expo" class="w-full h-full object-cover" src="https://picsum.photos/seed/data/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">Online</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">Data Science Expo</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">Jan 5-7, 2026 • Data Science Institute</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">Big Data</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">180 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="FinTech Revolution" class="w-full h-full object-cover" src="https://picsum.photos/seed/finance/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">In-Person</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">FinTech Revolution</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">Jan 20-22, 2026 • Business School</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">Finance</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">220 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Hardware Heroes" class="w-full h-full object-cover" src="https://picsum.photos/seed/hardware/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">Online</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">Hardware Heroes</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">Feb 5-7, 2026 • Makerspace Collective</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">Robotics</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">85 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Game Dev Gauntlet" class="w-full h-full object-cover" src="https://picsum.photos/seed/game/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">In-Person</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">Game Dev Gauntlet</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">Feb 18-20, 2026 • Digital Arts College</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">Gaming</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">190 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="HealthTech Sprint" class="w-full h-full object-cover" src="https://picsum.photos/seed/health/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">Online</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">HealthTech Sprint</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">Mar 2-4, 2026 • Medical University</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">Healthcare</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">135 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Sustainable Future Jam" class="w-full h-full object-cover" src="https://picsum.photos/seed/sustain/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">Online</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">Sustainable Future Jam</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">Mar 15-17, 2026 • Environmental Institute</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">GreenTech</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">110 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Blockchain Builders" class="w-full h-full object-cover" src="https://picsum.photos/seed/blockchain/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">In-Person</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">Blockchain Builders</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">Apr 1-3, 2026 • Crypto Campus</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">DeFi</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">250 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Mobile App Marathon" class="w-full h-full object-cover" src="https://picsum.photos/seed/mobile/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">Online</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">Mobile App Marathon</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">Apr 10-12, 2026 • App Academy</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">Mobile Dev</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">175 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="Cloud Computing Clash" class="w-full h-full object-cover" src="https://picsum.photos/seed/cloud/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">In-Person</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">Cloud Computing Clash</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">May 5-7, 2026 • Serverless University</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">Cloud</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">290 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+<div class="hackathon-card flex flex-col bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:-translate-y-1">
+<div class="relative aspect-[16/9] overflow-hidden">
+<img alt="DevOps Dream-a-thon" class="w-full h-full object-cover" src="https://picsum.photos/seed/devops/400/225"/>
+<span class="absolute top-4 left-4 bg-[#00C9A7] text-white text-xs font-bold px-3 py-1 rounded-full">Online</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="hackathon-name text-gray-900 dark:text-white text-lg font-bold leading-tight">DevOps Dream-a-thon</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium mt-1">May 20-22, 2026 • Automation Institute</p>
+<div class="mt-4 flex flex-wrap gap-2"><span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold px-2 py-1 rounded-full">DevOps</span></div>
+<div class="mt-auto pt-6 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400"><span class="material-symbols-outlined text-base">group</span><span class="text-sm">160 participants</span></div>
+<a class="inline-flex items-center gap-2 text-[#00C9A7] font-bold hover:text-[#00a68c] transition-colors text-sm" href="#">Details →</a>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" href="#"><span class="material-symbols-outlined text-base">lock</span>Login to Register</a>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 flex flex-col sm:flex-row justify-between items-center gap-6">
+<p class="text-sm text-gray-600 dark:text-gray-400">Showing 15 results</p>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+<span class="material-symbols-outlined"> arrow_back </span> Previous
+</button>
+<span class="text-sm font-medium text-gray-700 dark:text-gray-300">Page 1 of 1</span>
+<button class="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+Next Page <span class="material-symbols-outlined"> arrow_forward </span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-100 dark:bg-[#0f1413] py-12 px-10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
+<div class="flex flex-col gap-4 items-center md:items-start">
+<div class="flex items-center gap-3">
+<svg class="h-7 w-7 text-[#00C9A7]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-gray-900 dark:text-white text-xl font-bold">InnovateHub</h2>
+</div>
+<p class="text-gray-600 dark:text-white/80 text-base max-w-xs">© 2025 InnovateHub. Ignite your passion for creation.</p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+<a class="text-gray-500 dark:text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">About</a>
+<a class="text-gray-500 dark:text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">Contact</a>
+<a class="text-gray-500 dark:text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">FAQs</a>
+</div>
+<div class="flex justify-center gap-5">
+<a class="text-gray-500 dark:text-[#9cbab7] hover:text-gray-900 dark:hover:text-white transition-colors" href="#">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path></svg>
+</a>
+<a class="text-gray-500 dark:text-[#9cbab7] hover:text-gray-900 dark:hover:text-white transition-colors" href="#">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+<div id="filter-modal" class="fixed inset-0 bg-black bg-opacity-70 z-[100] flex items-center justify-center p-4 hidden">
+<div class="bg-[#1e293b] w-full max-w-2xl rounded-2xl p-8 shadow-2xl relative text-gray-300 transform transition-all duration-300 ease-in-out scale-95 opacity-0" id="modal-content">
+<button id="close-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"><span class="material-symbols-outlined">close</span></button>
+<h2 class="text-2xl font-bold text-white mb-8">Filter Hackathons</h2>
+<div class="space-y-8">
+<div><label class="text-sm font-semibold text-gray-400 mb-2 block">COLLEGE/ORGANIZER</label><div class="relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">search</span><input type="text" placeholder="Search for colleges..." class="w-full bg-[#2a3a52] border border-gray-600 rounded-lg pl-10 pr-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-[#00C9A7]"></div></div>
+<div><label class="text-sm font-semibold text-gray-400 mb-3 block">THEME/DOMAIN</label><div class="flex flex-wrap gap-3"><button class="px-4 py-1.5 bg-[#2a3a52] border border-gray-600 rounded-full text-sm hover:border-[#00C9A7] transition">AI/ML</button><button class="px-4 py-1.5 bg-[#00C9A7] border border-[#00C9A7] rounded-full text-sm text-black font-semibold">Web Dev</button><button class="px-4 py-1.5 bg-[#2a3a52] border border-gray-600 rounded-full text-sm hover:border-[#00C9A7] transition">Blockchain</button></div></div>
+<div><label class="text-sm font-semibold text-gray-400 mb-3 block">MODE/FORMAT</label><div class="flex items-center gap-6"><label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mode" class="w-4 h-4 text-[#00C9A7] bg-gray-700 border-gray-600 focus:ring-[#00C9A7]" checked> Any</label><label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mode" class="w-4 h-4 text-[#00C9A7] bg-gray-700 border-gray-600 focus:ring-[#00C9A7]"> Online</label><label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="mode" class="w-4 h-4 text-[#00C9A7] bg-gray-700 border-gray-600 focus:ring-[#00C9A7]"> In-Person</label></div></div>
+<div><label class="text-sm font-semibold text-gray-400 mb-3 block">DIFFICULTY LEVEL</label><div class="flex items-center gap-6"><label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="difficulty" class="w-4 h-4 text-[#00C9A7] bg-gray-700 border-gray-600 focus:ring-[#00C9A7]" checked> Beginner</label><label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="difficulty" class="w-4 h-4 text-[#00C9A7] bg-gray-700 border-gray-600 focus:ring-[#00C9A7]"> Intermediate</label><label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="difficulty" class="w-4 h-4 text-[#00C9A7] bg-gray-700 border-gray-600 focus:ring-[#00C9A7]"> Advanced</label></div></div>
+<div><label class="text-sm font-semibold text-gray-400 mb-2 block">LOCATION</label><input type="text" placeholder="Enter city or country" class="w-full bg-[#2a3a52] border border-gray-600 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-[#00C9A7]"></div>
+</div>
+<div class="mt-10 pt-6 border-t border-gray-700 flex justify-end items-center gap-4"><button class="px-6 py-2.5 rounded-lg text-white hover:bg-gray-700 transition">Clear</button><button class="px-6 py-2.5 rounded-lg bg-[#00C9A7] text-black font-bold hover:bg-[#00a68c] transition">Apply Filters</button></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Filter Modal Logic ---
+    const filterModal = document.getElementById('filter-modal');
+    const modalContent = document.getElementById('modal-content');
+    const openModalBtn = document.getElementById('filter-btn');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const openModal = () => {
+        filterModal.classList.remove('hidden');
+        setTimeout(() => { modalContent.classList.remove('scale-95', 'opacity-0'); }, 10);
+    };
+    const closeModal = () => {
+        modalContent.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => { filterModal.classList.add('hidden'); }, 300);
+    };
+    openModalBtn.addEventListener('click', openModal);
+    closeModalBtn.addEventListener('click', closeModal);
+    filterModal.addEventListener('click', (event) => {
+        if (event.target === filterModal) { closeModal(); }
+    });
+
+    // --- Search Bar Functionality ---
+    const searchBar = document.getElementById('search-bar');
+    const cards = document.getElementsByClassName('hackathon-card');
+    searchBar.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        for (let card of cards) {
+            const title = card.querySelector('.hackathon-name').textContent.toLowerCase();
+            if (title.includes(searchTerm)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        }
+    });
+});
+</script>
+</body></html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        .nav-link {
+            position: relative;
+            transition: color 0.25s ease-out;
+        }
+        .nav-link:hover {
+            color: #00C9A7;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #00C9A7;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body class="bg-[#111817]">
+<div class="relative flex size-full min-h-screen flex-col dark group/design-root overflow-x-hidden" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#283937] bg-[#111817]/80 px-10 py-3 backdrop-blur-sm">
+<div class="flex items-center gap-4 text-white">
+<svg class="h-6 w-6 text-[#00C9A7]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">InnovateHub</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="nav-link text-white/80 text-sm font-medium leading-normal" href="./index.html">Home</a>
+<a class="nav-link text-white/80 text-sm font-medium leading-normal" href="./explorefinal.html">Explore Hackathons</a>
+<a class="nav-link text-[#00C9A7] text-sm font-medium leading-normal" href="./organise.html">Organize</a>
+<a class="nav-link text-white/80 text-sm font-medium leading-normal" href="./about.html">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-transparent border border-white/30 text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white/10 transition-colors">
+<span class="truncate">Login</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-[#00C9A7] text-[#111817] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#00a68c] transition-colors">
+<span class="truncate">Signup</span>
+</button>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined"> menu </span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<section class="relative flex min-h-[80vh] flex-col items-center justify-center py-20 px-4">
+<div class="absolute inset-0 bg-gradient-to-b from-[#111817] via-[#111817]/80 to-[#111817] z-10"></div>
+<img alt="Hackathon action scene" class="absolute inset-0 w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqEursrbbeZ0RmejQqerB3agtgIVUuxqjwFpY_4Jt7e2yRjzSli9gC6kMpDZwDH9geSbGi1q2sNT69LyAn3dZWEySvo5ErEc-K2rLtktGe0v6N6MQBaDwjh64NZ3wE-2TtFEwH30qNTNZ4KxdUZs03KCZUavz_Ti-6JitOgq5TTSaO2cOaiw-_5Hnpu4DK9WOC_lff-vy5J5p4ZNAfxAA2eRKndE-pd_IvVVQEmbhPTgTCAj3ai5ZCWMDn3Qc9T37altC_ArUGOeo"/>
+<div class="relative z-20 flex flex-col items-center justify-center text-center max-w-4xl mx-auto gap-6">
+<h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tighter">Host Your Hackathon With Us.</h1>
+<p class="text-white/80 text-lg md:text-xl font-normal leading-relaxed">Easily create, manage, and promote hackathons across engineering colleges.</p>
+<div class="flex flex-col sm:flex-row gap-4 mt-6">
+<a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-8 bg-[#00C9A7] text-[#111817] text-lg font-bold leading-normal tracking-[0.015em] hover:bg-[#00a68c] transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-[#00C9A7]/30" href="#">
+<span class="truncate">Sign Up as Organizer</span>
+</a>
+<a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-8 bg-transparent border border-white/50 text-white text-lg font-bold leading-normal tracking-[0.015em] hover:bg-white/10 transition-colors" href="#why-organize">
+<span class="truncate">Learn More</span>
+</a>
+</div>
+</div>
+</section>
+<section class="bg-[#141d1c] py-24 px-4 sm:px-10" id="why-organize">
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="text-white text-4xl font-extrabold leading-tight tracking-tight">Why Organize With Us?</h2>
+<p class="text-white/80 text-lg mt-4">We provide the tools and platform to make your hackathon a massive success.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-6xl mx-auto">
+<div class="flex flex-col items-center text-center gap-4 rounded-xl border border-[#283937] bg-[#1a2524] p-8 hover:bg-[#1f2e2d] hover:border-[#00C9A7]/50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#00c9a7]/10">
+<div class="bg-[#00C9A7]/10 p-4 rounded-full">
+<span class="material-symbols-outlined text-[#00C9A7] text-4xl">how_to_reg</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight mt-2">Streamlined Registrations</h3>
+<p class="text-[#9cbab7] text-base font-normal leading-relaxed">Manage participant sign-ups, team formations, and communications all in one place.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4 rounded-xl border border-[#283937] bg-[#1a2524] p-8 hover:bg-[#1f2e2d] hover:border-[#00C9A7]/50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#00c9a7]/10">
+<div class="bg-[#00C9A7]/10 p-4 rounded-full">
+<span class="material-symbols-outlined text-[#00C9A7] text-4xl">dashboard_customize</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight mt-2">Easy Management</h3>
+<p class="text-[#9cbab7] text-base font-normal leading-relaxed">Use our intuitive dashboard to handle submissions, judging, scheduling, and announcements.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4 rounded-xl border border-[#283937] bg-[#1a2524] p-8 hover:bg-[#1f2e2d] hover:border-[#00C9A7]/50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#00c9a7]/10">
+<div class="bg-[#00C9A7]/10 p-4 rounded-full">
+<span class="material-symbols-outlined text-[#00C9A7] text-4xl">monitoring</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight mt-2">Analytics &amp; Reach</h3>
+<p class="text-[#9cbab7] text-base font-normal leading-relaxed">Gain insights into your event's performance and reach a wider audience of students.</p>
+</div>
+</div>
+</section>
+<section class="py-24 px-4 sm:px-10">
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="text-white text-4xl font-extrabold leading-tight tracking-tight">How It Works</h2>
+<p class="text-white/80 text-lg mt-4">Getting your hackathon live is as easy as 1-2-3.</p>
+</div>
+<div class="relative max-w-5xl mx-auto mt-20">
+<div class="absolute left-1/2 top-0 h-full w-0.5 bg-[#283937] hidden md:block"></div>
+<div class="relative flex md:justify-start items-center w-full mb-16">
+<div class="md:w-1/2 md:pr-12">
+<div class="bg-[#1a2524] border border-[#283937] p-8 rounded-xl text-left">
+<h3 class="text-white text-2xl font-bold">1. Sign Up &amp; Create</h3>
+<p class="text-[#9cbab7] mt-2">Create an organizer account and set up your hackathon profile with all the essential details like theme, rules, and prizes.</p>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 bg-[#00C9A7] rounded-full flex items-center justify-center text-[#111817] font-bold text-lg border-4 border-[#111817] hidden md:flex">1</div>
+</div>
+<div class="relative flex md:justify-end items-center w-full mb-16">
+<div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 bg-[#00C9A7] rounded-full flex items-center justify-center text-[#111817] font-bold text-lg border-4 border-[#111817] hidden md:flex">2</div>
+<div class="md:w-1/2 md:pl-12">
+<div class="bg-[#1a2524] border border-[#283937] p-8 rounded-xl text-left">
+<h3 class="text-white text-2xl font-bold">2. Publish &amp; Promote</h3>
+<p class="text-[#9cbab7] mt-2">Go live! Your event will be listed on our platform, visible to thousands of students. Use our tools to promote it further.</p>
+</div>
+</div>
+</div>
+<div class="relative flex md:justify-start items-center w-full">
+<div class="md:w-1/2 md:pr-12">
+<div class="bg-[#1a2524] border border-[#283937] p-8 rounded-xl text-left">
+<h3 class="text-white text-2xl font-bold">3. Manage &amp; Engage</h3>
+<p class="text-[#9cbab7] mt-2">Interact with participants, manage submissions, and run the event smoothly with our comprehensive organizer dashboard.</p>
+</div>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 bg-[#00C9A7] rounded-full flex items-center justify-center text-[#111817] font-bold text-lg border-4 border-[#111817] hidden md:flex">3</div>
+</div>
+</div>
+</section>
+<section class="bg-[#141d1c] py-24 px-4 sm:px-10">
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="text-white text-4xl font-extrabold leading-tight tracking-tight">Social Proof from Organizers</h2>
+<p class="text-white/80 text-lg mt-4">Hear from others who have successfully hosted their events with us.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 max-w-7xl mx-auto">
+<div class="bg-[#1c2928] p-8 rounded-xl flex flex-col">
+<p class="text-white/90 text-lg italic">"The platform made managing 500+ participants a breeze. The analytics were incredibly insightful for our sponsors."</p>
+<div class="mt-auto pt-6 flex items-center gap-4">
+<img alt="Avatar of Jane Doe" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7fQ7cE91Ogaos3YQaT1SP-HCgrQuH2XFXSZmWGGUxXxX9pmVNnIFdeBsuTDnmiDlZkfOestuEw0Sy156YThdPOSuef_EtykObHGIpKETc0jTPwYdmIuHT6m3bKJp1edYJGivcSx9eayBOdHMYZnxpbO2Ey_UKCelOt6jubIKCF3bD013t5cLw8KPbDDW9gCUUx2UEekZwZ-CM-2HzqboGzifvZa26-VZiI2yOrc3DAVUdFJioLq54g90k9l_DKEYbKdzAkDUA2NI"/>
+<div>
+<p class="text-white font-bold">Jane Doe</p>
+<p class="text-[#9cbab7] text-sm">Organizer, Tech Innovators Challenge</p>
+</div>
+</div>
+</div>
+<div class="bg-[#1c2928] p-8 rounded-xl flex flex-col">
+<p class="text-white/90 text-lg italic">"We saw a 40% increase in registrations from outside our college, thanks to the visibility on InnovateHub."</p>
+<div class="mt-auto pt-6 flex items-center gap-4">
+<img alt="Avatar of John Smith" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBgqHmSY8LqEfIM-YgKZhhQw_Ogp4ZMeJrUW3Q__WG-z5l6yZiKJPv81s7rKSrQN3Jn99Br6-2XXj4n-0TDy7dXAkI8DScfJQX2GbtQCAXeVoHSKCWbzFwUIHZGydxY3Mi5NTf--AFyGetIVP6GoclTAIX0Oc2AhTYrpyv_pOFqf3fTUpIUVu7wDUG4qCMmi_sp30CJTTvsJKl81agvadadNqNBTVEk4TZeHDV-q9ddd7tfyJxg35A1V-IVIhEbTz59RgLddeLwD4"/>
+<div>
+<p class="text-white font-bold">John Smith</p>
+<p class="text-[#9cbab7] text-sm">Faculty Coordinator, Code Masters</p>
+</div>
+</div>
+</div>
+<div class="bg-[#1c2928] p-8 rounded-xl flex flex-col md:col-span-2 lg:col-span-1">
+<p class="text-white/90 text-lg italic">"The support team was fantastic. They were always available to help us with our queries. Highly recommended!"</p>
+<div class="mt-auto pt-6 flex items-center gap-4">
+<img alt="Avatar of Sarah Lee" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg40mFj7DAjB8WqG3k21XOQBFJASyxchpvHDpaOx5TpQ1Xj_w4JdA4Oi2uE1Vlh179YMpVw4FPE7guqLkZ1QSGEzZq38Mhdx4r6Oy0wrxqnWFKxwOBxV6Sq6IMSKdU12pvs9Z3KDRt8MGsHs_6hhHTTdIfmjulX8YCLOqHACIJyX4eo3ehijM60UC_XKS-iY8BbKJbJnOAlMrPdJYFx6JQ6terO4lQbeG-x0sTPeFnTlC_BCIZH-Sjy4h9L7gRmqSAatJg8IXBP48"/>
+<div>
+<p class="text-white font-bold">Sarah Lee</p>
+<p class="text-[#9cbab7] text-sm">President, Student Dev Club</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-10 text-center bg-[#1a2524] relative overflow-hidden">
+<div class="absolute top-0 left-0 w-72 h-72 bg-[#00c9a7]/20 rounded-full blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 right-0 w-72 h-72 bg-[#00c9a7]/20 rounded-full blur-3xl opacity-50 translate-x-1/2 translate-y-1/2"></div>
+<div class="max-w-3xl mx-auto relative">
+<h2 class="text-white text-4xl font-extrabold leading-tight tracking-tighter">Ready to Organize?</h2>
+<p class="text-white/80 text-lg mt-4 max-w-2xl mx-auto">Launch your next great hackathon with us. It’s free to get started.</p>
+<div class="mt-10">
+<a class="flex min-w-[84px] max-w-sm mx-auto cursor-pointer items-center justify-center overflow-hidden rounded-lg h-16 px-10 bg-[#00C9A7] text-[#111817] text-lg font-bold leading-normal tracking-[0.015em] hover:bg-[#00a68c] transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-[#00C9A7]/30" href="#">
+<span class="truncate">Get Started as Organizer</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#0f1413] py-12 px-10">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+<div class="flex flex-col gap-4 items-center md:items-start">
+<div class="flex items-center gap-3">
+<svg class="h-7 w-7 text-[#00C9A7]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-white text-xl font-bold">InnovateHub</h2>
+</div>
+<p class="text-white/60 text-sm max-w-xs">© 2024 InnovateHub. Ignite your passion for creation.</p>
+</div>
+<div class="flex flex-col gap-3 items-center">
+<h3 class="text-white font-bold text-lg">Quick Links</h3>
+<a class="text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">About</a>
+<a class="text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">Contact</a>
+<a class="text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">FAQs</a>
+<a class="text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">Organizer Help / Resources</a>
+</div>
+<div class="flex flex-col gap-4 items-center md:items-end">
+<h3 class="text-white font-bold text-lg">Follow Us</h3>
+<div class="flex justify-center gap-5">
+<a class="text-[#9cbab7] hover:text-white transition-colors" href="#">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
+</svg>
+</a>
+<a class="text-[#9cbab7] hover:text-white transition-colors" href="#">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+</svg>
+</a>
+<a class="text-[#9cbab7] hover:text-white transition-colors" href="#">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>

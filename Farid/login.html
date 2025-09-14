@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --checkbox-tick-svg: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='rgb(17,24,23)' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center bg-gray-50 group/design-root overflow-x-hidden p-4">
+<div class="w-full max-w-md space-y-8">
+<div class="text-center">
+<div class="flex items-center justify-center gap-2 mb-4">
+<svg class="h-8 w-8 text-[#0bdac5]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+<h1 class="text-2xl font-bold tracking-tight">InnovateHub</h1>
+</div>
+<h2 class="text-3xl font-extrabold tracking-tight">Welcome Back!</h2>
+<p class="mt-2 text-sm text-gray-600">Login to access your hackathon portal.</p>
+</div>
+<div class="rounded-lg bg-white p-8 shadow-lg">
+<form class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-gray-700" for="email"> Email Address </label>
+<div class="mt-1">
+<input autocomplete="email" class="form-input block w-full rounded-md border-gray-300 shadow-sm focus:border-[#0bdac5] focus:ring-[#0bdac5] sm:text-sm h-12" id="email" name="email" placeholder="your.email@example.com" required="" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700" for="password"> Password </label>
+<div class="mt-1">
+<input autocomplete="current-password" class="form-input block w-full rounded-md border-gray-300 shadow-sm focus:border-[#0bdac5] focus:ring-[#0bdac5] sm:text-sm h-12" id="password" name="password" placeholder="Enter your password" required="" type="password"/>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-gray-300 text-[#0bdac5] focus:ring-[#0bdac5] checked:bg-[image:--checkbox-tick-svg]" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="ml-2 block text-sm text-gray-900" for="remember-me"> Remember me </label>
+</div>
+<div class="text-sm">
+<a class="font-medium text-[#0bdac5] hover:text-[#0a9e8f]" href="#"> Forgot your password? </a>
+</div>
+</div>
+<div>
+<button class="flex w-full justify-center rounded-md border border-transparent bg-[#0bdac5] py-3 px-4 text-sm font-bold text-gray-900 shadow-sm hover:bg-[#0a9e8f] focus:outline-none focus:ring-2 focus:ring-[#0bdac5] focus:ring-offset-2" type="submit">
+                Login
+              </button>
+</div>
+</form>
+<div class="mt-6">
+<div class="relative">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-gray-300"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="bg-white px-2 text-gray-500"> Or continue with </span>
+</div>
+</div>
+<div class="mt-6 grid grid-cols-2 gap-3">
+<div>
+<a class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50" href="#">
+<svg aria-hidden="true" class="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M22.04 12.23c0-.82-.07-1.61-.21-2.38h-9.8v4.51h5.51c-.24 1.48-1.5 3.08-3.3 3.08-2.61 0-4.73-2.15-4.73-4.8s2.12-4.8 4.73-4.8c1.32 0 2.29.56 2.82 1.08l3.65-3.5C18.66 3.19 15.63 2 12.03 2 7.03 2 3.2 5.56 3.2 10s3.83 8 8.83 8c4.63 0 8.44-3.1 8.44-8.15 0-.6-.05-1.18-.13-1.62z" fill-rule="evenodd"></path>
+</svg>
+<span>Google</span>
+</a>
+</div>
+<div>
+<a class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50" href="#">
+<svg aria-hidden="true" class="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.82c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.852 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+<span>GitHub</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<p class="text-center text-sm text-gray-600">
+          Don't have an account?
+          <a class="font-medium text-[#0bdac5] hover:text-[#0a9e8f]" href="#"> Sign Up </a>
+</p>
+</div>
+</div>
+
+</body></html>

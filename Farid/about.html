@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        .nav-link {
+            position: relative;
+            transition: color 0.25s ease-out;
+        }
+        .nav-link:hover {
+            color: #00C9A7;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #00C9A7;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .gallery-card .overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-card:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-[#111817]">
+<div class="relative flex size-full min-h-screen flex-col dark group/design-root overflow-x-hidden" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#283937] bg-[#111817]/80 px-10 py-3 backdrop-blur-sm">
+<div class="flex items-center gap-4 text-white">
+<svg class="h-6 w-6 text-[#00C9A7]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">InnovateHub</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="nav-link text-white/80 text-sm font-medium leading-normal" href="./index.html">Home</a>
+<a class="nav-link text-white/80 text-sm font-medium leading-normal" href="./explorefinal.html">Explore Hackathons</a>
+<a class="nav-link text-white/80 text-sm font-medium leading-normal" href="./organise.html">Organize</a>
+<a class="nav-link text-[#00C9A7] text-sm font-medium leading-normal" href="./about.html">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-transparent border border-white/30 text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white/10 transition-colors">
+<span class="truncate">Login</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-[#00C9A7] text-[#111817] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#00a68c] transition-colors">
+<span class="truncate">Signup</span>
+</button>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined"> menu </span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<section class="relative flex min-h-[70vh] flex-col items-center justify-center py-20 px-4">
+<div class="absolute inset-0 bg-gradient-to-b from-[#111817] via-[#111817]/80 to-[#111817] z-10"></div>
+<img alt="Illustration of hackathon energy" class="absolute inset-0 w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqEursrbbeZ0RmejQqerB3agtgIVUuxqjwFpY_4Jt7e2yRjzSli9gC6kMpDZwDH9geSbGi1q2sNT69LyAn3dZWEySvo5ErEc-K2rLtktGe0v6N6MQBaDwjh64NZ3wE-2TtFEwH30qNTNZ4KxdUZs03KCZUavz_Ti-6JitOgq5TTSaO2cOaiw-_5Hnpu4DK9WOC_lff-vy5J5p4ZNAfxAA2eRKndE-pd_IvVVQEmbhPTgTCAj3ai5ZCWMDn3Qc9T37altC_ArUGOeo"/>
+<div class="relative z-20 flex flex-col items-center justify-center text-center max-w-4xl mx-auto gap-6">
+<h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tighter">Empowering Builders. Connecting Innovators.</h1>
+<p class="text-white/80 text-lg md:text-xl font-normal leading-relaxed">We're on a mission to build the largest community of student hackers, creators, and organizers.</p>
+<div class="flex flex-col sm:flex-row gap-4 mt-6">
+<a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-8 bg-[#00C9A7] text-[#111817] text-lg font-bold leading-normal tracking-[0.015em] hover:bg-[#00a68c] transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-[#00C9A7]/30" href="#">
+<span class="truncate">Explore Hackathons</span>
+</a>
+<a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-8 bg-[#FF6B35] text-white text-lg font-bold leading-normal tracking-[0.015em] hover:bg-[#e65a2a] transition-colors" href="#">
+<span class="truncate">Organize Hackathon</span>
+</a>
+</div>
+</div>
+</section>
+<section class="bg-[#141d1c] py-24 px-4 sm:px-10">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+<div class="flex justify-center">
+<img class="w-full max-w-md h-auto object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWFlU_jLHH-D292oFoQTFz7ZwY0KqK42Jqsx7gAj4iUTefIARFNjf2Dq0YXVxqCQgvdbuBzquowYhodbJW2mNsofKWWB64F5GKo6QV4V3DqENDLDnpt5YRnVlTVyfwNX5yxWK0Eza4r-t9S4_CWP0b6an2oDe2oH2V5HyG8WIHtFhNAYZNW9Jmi8YLMAp9k8nNQQz0NhPHKFlDq7D7kvgldZdURhl-m9NTzRSW84-VOlRXyjSK-8a2L98NjPWEOGseDrneejK4HQM"/>
+</div>
+<div class="text-white">
+<h2 class="text-4xl font-extrabold leading-tight tracking-tight">Our Mission &amp; Vision</h2>
+<p class="text-white/80 text-lg mt-6">InnovateHub was born from a simple idea: to make hackathons more accessible to every student, everywhere. We believe in the power of collaborative creation to solve real-world problems and launch careers.</p>
+<div class="mt-8 space-y-6">
+<div>
+<h3 class="text-2xl font-bold text-[#00C9A7]">Mission</h3>
+<p class="text-[#9cbab7] mt-2">To provide a centralized platform for students to discover, participate in, and learn from hackathons, fostering a vibrant culture of innovation and hands-on learning.</p>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-[#FF6B35]">Vision</h3>
+<p class="text-[#9cbab7] mt-2">To become the essential ecosystem for the next generation of builders, connecting them with opportunities, resources, and each other to shape the future of technology.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-4 sm:px-10">
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="text-white text-4xl font-extrabold leading-tight tracking-tight">Hackathon Culture in Action</h2>
+<p class="text-white/80 text-lg mt-4">Glimpses from the amazing events hosted on our platform.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 max-w-7xl mx-auto">
+<div class="gallery-card group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+<img alt="Hackathon team working late" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXCiZsAGs3fmoDQbgdzuaLUwUUc5zeyNX8v2UxcbU69naZ0orLZ53tFCM0PxCUFzF7fbR1M1lxY4Ljhviel4c6k7lZ-Ih43Pq-CL3o1Me0NqHvafMmWFT9Fypv0JD9HyByDq5K9J-D4CtjUNb4Kn6zCaQyDsuWJT0Ot-oraKsDPDaOvKIi9wpX5eeBNQu1u9mSX7YAG-vOi3mcwNHqsJWTqLIxlWZck_QGcqH8s3JRblCzEivECLOl06QhSzX5LqFv953i1vLcV3A"/>
+<div class="overlay absolute inset-0 bg-black/70 flex items-center justify-center p-4">
+<span class="text-white text-lg font-bold flex items-center gap-2">View Gallery <span class="material-symbols-outlined">arrow_forward</span></span>
+</div>
+</div>
+<div class="gallery-card group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+<img alt="Winning team celebrating on stage" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-9VgAQaxCwOrIM-u3C0tiDkbmUC7IpU5nQe62fFfizvJUfMc8sNV4_H10_MzPd9vc5rQw_9TB-J267L9AKRCip34tjw9tszaqETG8-zEvnuI8kh1r-NJG6v-A9KpuK0wOGB9as04BPwJmu7StcF2OlNAJj52SK18qN4CD5zKkcPLmVIUZw19s_mP7PBwmGfXLdjDLWNWzL7S4GzmDiQd8DM4kgcBgPLRJWcD9nr7gyvQDFo6kQUniLTmtB-s1gcGlx3YInKEQQU8"/>
+<div class="overlay absolute inset-0 bg-black/70 flex items-center justify-center p-4">
+<span class="text-white text-lg font-bold flex items-center gap-2">View Gallery <span class="material-symbols-outlined">arrow_forward</span></span>
+</div>
+</div>
+<div class="gallery-card group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+<img alt="Students presenting their project" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR8eRg6gQcuKyqLEgOF72imwDh6GypNe9jXFZpP_c_9LGaIpbqO-xdP2r9ciHiM8VNoOwSeQ4q8qtP1aIk66R5hlvvB13YiItngaV1dS34sDg-41WIdTrVuWO0DBc_2kS6jY8iSY6l7VvipFvzomXNtZhgLuM2v2zPnkjsuz3wrKnCPEu23R9zK2cAjLp0vuxtb0jLbdtdSuFhjrS5H7HP-1ssz0rsHzGzzB6hYt06j68Ktixyj44nFQl3d0zNo6IbQ4T4iyhXiSM"/>
+<div class="overlay absolute inset-0 bg-black/70 flex items-center justify-center p-4">
+<span class="text-white text-lg font-bold flex items-center gap-2">View Gallery <span class="material-symbols-outlined">arrow_forward</span></span>
+</div>
+</div>
+<div class="gallery-card group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+<img alt="Networking session at a hackathon" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd_qImOi2oz2U86n79D-hFROLcg7GyYA221bPTANwop8hEJ6TZTTGxUvaGhan3OUgpkiuD_sDhkFgiSzqE_ZXWJHReniXzMKMEg0YA4bTAC1Bl2b8FJddxht4gq3UWE3VJ2YG7xrtDjwKlrWA_9k4pW7okCOYNpMVOBQDybX7q0wBkBOcPR73zcue3pepXQP4mgq7iOWEuB5jwtmbXUVWb_1bTuu_w6il54HDBpHimvqiFOuVA3YThEYrcVVIcK3t4XJJyl5FcUx8"/>
+<div class="overlay absolute inset-0 bg-black/70 flex items-center justify-center p-4">
+<span class="text-white text-lg font-bold flex items-center gap-2">View Gallery <span class="material-symbols-outlined">arrow_forward</span></span>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-[#141d1c] py-24 px-4 sm:px-10">
+<div class="max-w-6xl mx-auto">
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="text-white text-4xl font-extrabold leading-tight tracking-tight">Our Impact by the Numbers</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+<div class="flex flex-col items-center text-center gap-3 rounded-xl border border-[#283937] bg-[#1a2524] p-8">
+<span class="material-symbols-outlined text-[#00C9A7] text-5xl">event</span>
+<p class="text-white text-5xl font-black">500+</p>
+<h3 class="text-[#9cbab7] text-lg font-medium">Hackathons Hosted</h3>
+</div>
+<div class="flex flex-col items-center text-center gap-3 rounded-xl border border-[#283937] bg-[#1a2524] p-8">
+<span class="material-symbols-outlined text-[#00C9A7] text-5xl">groups</span>
+<p class="text-white text-5xl font-black">150K+</p>
+<h3 class="text-[#9cbab7] text-lg font-medium">Participants</h3>
+</div>
+<div class="flex flex-col items-center text-center gap-3 rounded-xl border border-[#283937] bg-[#1a2524] p-8">
+<span class="material-symbols-outlined text-[#00C9A7] text-5xl">school</span>
+<p class="text-white text-5xl font-black">300+</p>
+<h3 class="text-[#9cbab7] text-lg font-medium">Colleges Onboarded</h3>
+</div>
+<div class="flex flex-col items-center text-center gap-3 rounded-xl border border-[#283937] bg-[#1a2524] p-8">
+<span class="material-symbols-outlined text-[#00C9A7] text-5xl">code</span>
+<p class="text-white text-5xl font-black">25K+</p>
+<h3 class="text-[#9cbab7] text-lg font-medium">Projects Built</h3>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-4 sm:px-10">
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="text-white text-4xl font-extrabold leading-tight tracking-tight">What the Community Says</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 max-w-7xl mx-auto">
+<div class="bg-[#1c2928] p-8 rounded-xl flex flex-col border border-transparent hover:border-[#00C9A7]/50 transition-colors">
+<p class="text-white/90 text-lg italic">"InnovateHub is the go-to platform for any student developer. I found my first internship through a connection I made at a hackathon here."</p>
+<div class="mt-auto pt-6 flex items-center gap-4">
+<img alt="Avatar of Priya Sharma" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg40mFj7DAjB8WqG3k21XOQBFJASyxchpvHDpaOx5TpQ1Xj_w4JdA4Oi2uE1Vlh179YMpVw4FPE7guqLkZ1QSGEzZq38Mhdx4r6Oy0wrxqnWFKxwOBxV6Sq6IMSKdU12pvs9Z3KDRt8MGsHs_6hhHTTdIfmjulX8YCLOqHACIJyX4eo3ehijM60UC_XKS-iY8BbKJbJnOAlMrPdJYFx6JQ6terO4lQbeG-x0sTPeFnTlC_BCIZH-Sjy4h9L7gRmqSAatJg8IXBP48"/>
+<div>
+<p class="text-white font-bold">Priya Sharma</p>
+<p class="text-[#9cbab7] text-sm">Student, IIT Bombay</p>
+</div>
+</div>
+</div>
+<div class="bg-[#1c2928] p-8 rounded-xl flex flex-col border border-transparent hover:border-[#00C9A7]/50 transition-colors">
+<p class="text-white/90 text-lg italic">"As an organizer, the platform is a lifesaver. We streamlined everything from registrations to judging. The reach we got was phenomenal."</p>
+<div class="mt-auto pt-6 flex items-center gap-4">
+<img alt="Avatar of Rohan Verma" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBgqHmSY8LqEfIM-YgKZhhQw_Ogp4ZMeJrUW3Q__WG-z5l6yZiKJPv81s7rKSrQN3Jn99Br6-2XXj4n-0TDy7dXAkI8DScfJQX2GbtQCAXeVoHSKCWbzFwUIHZGydxY3Mi5NTf--AFyGetIVP6GoclTAIX0Oc2AhTYrpyv_pOFqf3fTUpIUVu7wDUG4qCMmi_sp30CJTTvsJKl81agvadadNqNBTVEk4TZeHDV-q9ddd7tfyJxg35A1V-IVIhEbTz59RgLddeLwD4"/>
+<div>
+<p class="text-white font-bold">Rohan Verma</p>
+<p class="text-[#9cbab7] text-sm">Organizer, HackFest Delhi</p>
+</div>
+</div>
+</div>
+<div class="bg-[#1c2928] p-8 rounded-xl flex flex-col border border-transparent hover:border-[#00C9A7]/50 transition-colors md:col-span-2 lg:col-span-1">
+<p class="text-white/90 text-lg italic">"The quality and variety of hackathons are amazing. It's a great place to learn new skills, build cool projects, and meet awesome people."</p>
+<div class="mt-auto pt-6 flex items-center gap-4">
+<img alt="Avatar of Ananya Reddy" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7fQ7cE91Ogaos3YQaT1SP-HCgrQuH2XFXSZmWGGUxXxX9pmVNnIFdeBsuTDnmiDlZkfOestuEw0Sy156YThdPOSuef_EtykObHGIpKETc0jTPwYdmIuHT6m3bKJp1edYJGivcSx9eayBOdHMYZnxpbO2Ey_UKCelOt6jubIKCF3bD013t5cLw8KPbDDW9gCUUx2UEekZwZ-CM-2HzqboGzifvZa26-VZiI2yOrc3DAVUdFJioLq54g90k9l_DKEYbKdzAkDUA2NI"/>
+<div>
+<p class="text-white font-bold">Ananya Reddy</p>
+<p class="text-[#9cbab7] text-sm">Participant, CodeWave 2023</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-10 text-center bg-[#00C9A7]/10 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-72 h-72 bg-[#00c9a7]/20 rounded-full blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 right-0 w-72 h-72 bg-[#FF6B35]/20 rounded-full blur-3xl opacity-50 translate-x-1/2 translate-y-1/2"></div>
+<div class="max-w-3xl mx-auto relative">
+<h2 class="text-white text-4xl font-extrabold leading-tight tracking-tighter">Be Part of the Movement.</h2>
+<p class="text-white/80 text-lg mt-4 max-w-2xl mx-auto">Whether you're a builder, a dreamer, or a future leader, your journey starts here.</p>
+<div class="mt-10">
+<a class="flex min-w-[84px] max-w-sm mx-auto cursor-pointer items-center justify-center overflow-hidden rounded-lg h-16 px-10 bg-[#00C9A7] text-[#111817] text-xl font-bold leading-normal tracking-[0.015em] hover:bg-[#00a68c] transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-[#00C9A7]/30" href="#">
+<span class="truncate">Join Now</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#0f1413] py-12 px-10">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+<div class="flex flex-col gap-4 items-center md:items-start col-span-1 md:col-span-2">
+<div class="flex items-center gap-3">
+<svg class="h-7 w-7 text-[#00C9A7]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-white text-xl font-bold">InnovateHub</h2>
+</div>
+<p class="text-white/60 text-sm max-w-xs">© 2024 InnovateHub. Empowering the next generation of innovators.</p>
+</div>
+<div class="flex flex-col gap-3 items-center md:items-start">
+<h3 class="text-white font-bold text-lg">Company</h3>
+<a class="text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">About Us</a>
+<a class="text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">Contact</a>
+<a class="text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">Press/Media Kit</a>
+<a class="text-[#9cbab7] hover:text-[#00C9A7] transition-colors text-sm font-medium" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-3 items-center md:items-start">
+<h3 class="text-white font-bold text-lg">Follow Us</h3>
+<div class="flex justify-center md:justify-start gap-5">
+<a class="text-[#9cbab7] hover:text-white transition-colors" href="#">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
+</svg>
+</a>
+<a class="text-[#9cbab7] hover:text-white transition-colors" href="#">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>
